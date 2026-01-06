@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans);
+}
+
+.issue-content :where(h1, h2, h3, h4) {
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.issue-content :where(p, ul, ol, blockquote) {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  line-height: 1.75;
+  color: #334155;
+}
+
+.issue-content :where(ul, ol) {
+  padding-left: 1.5rem;
+}
+
+.issue-content :where(blockquote) {
+  border-left: 3px solid #cbd5f5;
+  padding-left: 1rem;
+  color: #475569;
+  background: #f8fafc;
+}
+
+.issue-content :where(a) {
+  color: #1d4ed8;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.issue-content :where(code, pre) {
+  font-family: var(--font-geist-mono);
+  background: #f1f5f9;
+  border-radius: 0.5rem;
+}
+
+.issue-content :where(pre) {
+  padding: 1rem;
+  overflow-x: auto;
+}
+
+.issue-content :where(img) {
+  max-width: 100%;
+  border-radius: 0.75rem;
+}
